@@ -2,13 +2,12 @@
 # Expectations
 expectedResult='Hello, world!'
 # Build
-cd ../HelloWorld
 cargo build
 # Run
-actualResult=$(exec ../HelloWorld/target/debug/HelloWorld)
+actualResult=$(../target/debug/HelloWorld)
 # Verify
 if [ "$expectedResult" = "$actualResult" ]; then 
-	echo "I done did it, returned expected result:"
+	echo "I done did it, returned expected result"
 else 
-	echo "$actualResult"
+	echo "Failed to do the thing, returned: $actualResult"
 fi
